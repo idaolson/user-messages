@@ -1,6 +1,12 @@
-<h3>Welcome, <%= @user.name %></h3>
+<h3>Welcome, <%= @user.first_name%> <%= @user.last_name %></h3>
 
-You are a @user.role
+<p>You are a <%= @user.role %></p>
 
-Here are your announcements: 
+<p>Here are your announcements: </p>
+<% @current_announcements.each do |a| %>
+<%= a.message %><br>
+<% end %>
+<br>
 
+<a href="/logout">Log Out</a><br>
+<a href="/announcements/new">Make New Announcement</a>
