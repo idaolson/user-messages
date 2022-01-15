@@ -20,7 +20,9 @@ class AnnouncementsController < ApplicationController
   private
 
   def announcement_params
-    params.permit(:message, :role, :expiration, :active)
+    params.permit(:message, :role, :expiration, :active, :quantity)
   end 
-
 end 
+
+
+
