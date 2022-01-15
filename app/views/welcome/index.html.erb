@@ -1,5 +1,6 @@
   <% if current_user %>
       <%= link_to "Log out", logout_path, method: :delete%><br><br>
+      <%= link_to "Dashboard", dashboard_index_path %>
 
   <% else %>
     <%= form_with url: login_path, method: :post, local: true do |f| %>
@@ -11,5 +12,5 @@
     <% end %>
 
     <%= link_to "Register New Account", registration_path %><br><br>
-
+    
   <% end %>

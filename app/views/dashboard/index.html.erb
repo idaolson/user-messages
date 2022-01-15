@@ -1,6 +1,6 @@
 <h3>Welcome, <%= @user.first_name%> <%= @user.last_name %></h3>
 
-<p>You are a <%= @user.role %></p>
+<p>You are a <%= @user.role %>.</p>
 
 <p>Here are your announcements: </p>
 <% @current_announcements.each do |a| %>
@@ -8,5 +8,5 @@
 <% end %>
 <br>
 
-<a href="/logout">Log Out</a><br>
-<a href="/announcements/new">Make New Announcement</a>
+<%= link_to "Log Out", logout_path, method: :delete %><br><br>
+<%= link_to "Make New Announcement", new_announcement_path %>

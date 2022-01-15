@@ -16,5 +16,8 @@
       <%= f.submit "Create Announcement" %><br><br>
     <% end %>
 
-    <a href="/dashboard">Return to Dashboard</a><br>
+    <%= link_to "Log Out", logout_path, method: :delete %><br><br>
+    <%= link_to "Return to Dashboard", dashboard_index_path %>
+
+
 
