@@ -8,6 +8,8 @@
       <%= f.text_field :message %><br><br>
       <%= f.label :role, "Role:" %>
       <%= f.select :role, ["teacher", "champion", "admin"] %><br><br>
+      <%= f.label :quantity, "Number of Views:" %>
+      <%= f.number_field :quantity, in: 1..20 %><br><br>
       <%= f.label :expiration, "Expiration Date:" %>
       <%= f.date_select(:expiration, default: 3.days.from_now) %><br><br>
       <%= f.hidden_field :active, :value => true %>
