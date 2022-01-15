@@ -13,5 +13,7 @@
   <br>
 
   <%= link_to "Log Out", logout_path, method: :delete %><br>
-  <%= link_to "Make New Announcement", new_announcement_path %>
+    <% if current_user.role == "champion" || current_user.role == "admin"%>
+      <%= link_to "Make New Announcement", new_announcement_path %>
+    <% end %>
 </div>
