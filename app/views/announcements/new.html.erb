@@ -6,17 +6,17 @@
   
     <%= form_with url: announcements_path, method: :post, local: true do |f| %>
       <%= f.label :message, "Message:" %>
-      <%= f.text_field :message %><br><br>
+      <%= f.text_field :message %><br>
       <%= f.label :role, "Role:" %>
-      <%= f.select :role, ["teacher", "champion", "admin"] %><br><br>
+      <%= f.select :role, ["teacher", "champion", "admin"] %><br>
       <%= f.label :quantity, "Number of Views:" %>
-      <%= f.number_field :quantity, in: 1..20 %><br><br>
+      <%= f.number_field :quantity, in: 1..20 %><br>
       <%= f.label :expiration, "Expiration Date:" %>
-      <%= f.date_select(:expiration, default: 3.days.from_now) %><br><br>
+      <%= f.date_select(:expiration, default: 3.days.from_now) %><br>
       <%= f.hidden_field :active, :value => true %>
       <%= f.submit "Create Announcement" %><br><br>
     <% end %>
 
-    <%= link_to "Log Out", logout_path, method: :delete %><br><br>
+    <%= link_to "Log Out", logout_path, method: :delete %><br>
     <%= link_to "Return to Dashboard", dashboard_index_path %>
   </div>
