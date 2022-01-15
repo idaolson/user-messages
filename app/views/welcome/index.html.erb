@@ -1,6 +1,7 @@
+<div class="container my-4 text-center">
   <% if current_user %>
-      <%= link_to "Log out", logout_path, method: :delete%><br><br>
-      <%= link_to "Dashboard", dashboard_index_path %>
+    <%= link_to "Log out", logout_path, method: :delete%><br><br>
+    <%= link_to "Dashboard", dashboard_index_path %>
 
   <% else %>
     <%= form_with url: login_path, method: :post, local: true do |f| %>
@@ -11,6 +12,7 @@
       <%= f.submit 'Log In' %><br><br>
     <% end %>
 
-    <%= link_to "Register New Account", registration_path %><br><br>
-    
+    <%= link_to "Register New Account", registration_path %>
+
   <% end %>
+</div>

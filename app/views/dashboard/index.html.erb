@@ -1,12 +1,17 @@
-<h3>Welcome, <%= @user.first_name%> <%= @user.last_name %></h3>
+<div class="container my-4">
+  
+  <h3>Welcome, <%= @user.first_name%> <%= @user.last_name %></h3>
 
-<p>You are a <%= @user.role %>.</p>
+  <p>You are a <%= @user.role.capitalize %>.</p>
 
-<p>Here are your announcements: </p>
-<% @current_announcements.each do |a| %>
-<%= a.message %><br>
-<% end %>
-<br>
+  <p>Here are your announcements: </p>
+  <ul>
+    <% @current_announcements.each do |a| %>
+      <li><%= a.message %></li>
+    <% end %>
+  </ul>
+  <br>
 
-<%= link_to "Log Out", logout_path, method: :delete %><br><br>
-<%= link_to "Make New Announcement", new_announcement_path %>
+  <%= link_to "Log Out", logout_path, method: :delete %><br>
+  <%= link_to "Make New Announcement", new_announcement_path %>
+</div>
