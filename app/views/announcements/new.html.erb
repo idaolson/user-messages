@@ -1,0 +1,15 @@
+  
+    <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %><br></div>
+  <% end %>
+  
+    <%= form_with url: announcements_path, method: :post, local: true do |f| %>
+      <%= f.label :message, "Message:" %>
+      <%= f.text_field :message %><br><br>
+      <%= f.label :role, "Role:" %>
+      <%= f.select :role, ["teacher", "champion", "admin"] %><br><br>
+      <%= f.label :expiration, "Expiration Date:" %>
+      <%= f.date_select(:expiration, default: 3.days.from_now) %><br><br>
+      <%= f.hidden_field :active, :value => true %>
+      <%= f.submit "Create Announcement" %><br><br>
+    <% end %>
