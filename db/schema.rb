@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_15_182249) do
+ActiveRecord::Schema.define(version: 2022_01_15_212932) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 2022_01_15_182249) do
   create_table "user_announcements", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "announcement_id"
-    t.boolean "read", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["announcement_id"], name: "index_user_announcements_on_announcement_id"
