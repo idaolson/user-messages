@@ -1,4 +1,8 @@
 <div class="container my-4 text-center">
+  <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %><br></div>
+  <% end %>
+
   <% if current_user %>
     <%= link_to "Log out", logout_path, method: :delete%><br><br>
     <%= link_to "Dashboard", dashboard_index_path %>
