@@ -7,7 +7,8 @@ class ApplicationController < ActionController::Base
     return if current_user
 
     redirect_to root_path
-    flash[:notice] = "Sign in to access site"
+    
+    flash[:notice] = "Log in to access site"
   end
 
   def current_user
